@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimada de ocurrencia, frente a medidas no farmacéuticas.
+Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimada de ocurrencia, frente a la aplicación por calendario de medidas no farmacéuticas.
 
 ## Resumen de resultados
 
@@ -25,6 +25,12 @@ Resumen de este estudio:
 De ahí la primera pregunta: *¿A qué nos referimos cuando hablamos de impacto?* El impacto directo claramente es la salud de las personas que habitan cada país que los gobernantes dirigen. Pero a eso subsiguen todas las consecuencias, en el sistema de salud del país, las consecuencias económicas que surgen de tener países enteros sin producir, sin transportar, importar o exportar durante tiempos extendidos y, finalmente, los efectos en la microeconomía de las familias que tienen que hacer frente a una situación de emergencia.
 
 La segunda pregunta es hasta cuándo hay que tomar cada una de las medidas posibles y cómo es el efecto conjunto que tiene la aplicación de varias de ellas en simultáneo. *¿Qué pasa si exhalamos muy rápido y volvemos al punto de inicio?*
+
+### Argentina
+
+El primer caso confirmado de COVID19 en el país fue el 3 de Marzo en Buenos Aires. El paciente, de 43 años, había llegado al país el 1 de Marzo desde Italia.
+
+En ese momento, otros países en el mundo ya experimentaban evoluciones mucho más desarrolladas: China informaba
 
 ## Modelo Conceptual
 
@@ -50,11 +56,13 @@ Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
 
 > blablabla
 
-Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" o verse limitadas por políticas externas al diagrama, como una medida de cuarentena, que disminuyen la tasa de contacto de una población.
+Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" pero sus valores "efectivos" pueden verse limitados por políticas externas al diagrama de estados, como una medida de cuarentena que disminuye la tasa de contacto de una población.
 
 #### KPIs
 
-
+- Infectados
+- Fallecimientos
+- Saturación de hospitales
 
 #### Variables de Decisión
 
@@ -63,8 +71,8 @@ Las transiciones entre los estados están definidas por probabilidades. Dichas p
 #### Lógicas de la simulación
 
 
+## Validación
 
 ## Data
-
 
 ## Fuentes
