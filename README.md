@@ -2,17 +2,21 @@
 
 ## Objetivo
 
-Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimada de ocurrencia.
+Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimada de ocurrencia, frente a medidas no farmacéuticas.
 
-## Conclusiones Generales
+## Resumen de resultados
 
-Resumen de este estudio: 
+
 
 ## Escenarios propuestos
 
 1. Medidas de aislamiento intensivas de corto plazo y extensión limitaciones en las fronteras  
 2. Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
 3. Medidas de aislamiento moderadas de largo plazo 
+
+## Conclusiones
+
+Resumen de este estudio: 
 
 ## Contexto
 
@@ -24,7 +28,7 @@ La segunda pregunta es hasta cuándo hay que tomar cada una de las medidas posib
 
 ## Modelo Conceptual
 
-Para este análisis se desarrolló un **Modelo Basado en Agentes** para poder entender y mostrar cómo las conductas individuales, en este caso de las personas, en un entorno conectado y definido, el país y sus fronteras, afectan a la evolución del sistema completo, a su vez limitada o guiada por las distintas medidas que se pueden tomar a nivel macro, en este caso políticas desde el Estado.
+Para este análisis se desarrolló un **Modelo Basado en Agentes** para poder entender y mostrar cómo las conductas individuales (en este caso de las personas) en un entorno conectado y definido (el país y sus fronteras) afectan a la evolución del sistema completo, a su vez limitada o guiada por las distintas medidas que se pueden tomar a nivel macro (políticas desde el Estado).
 
 En esta modelización existen dos tipos de agentes: las personas y las regiones. Las regiones, en principio, funcionan a modo informativo para obtener estadísticas de la simulación, pero las personas tienen una estructura de comportamiento específica y definida. 
 
@@ -32,20 +36,21 @@ En este tipo de modelos, los agentes tienen distintos *estados* en los que puede
 
 Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
 1. El estado ante la enfermedad
-2. El estado ante la detección de la misma
+2. El estado ante la detección de la misma en el sistema de salud
 
 ### El estado ante la enfermedad
 
-![Diagrama de Estados enfermedad](/images/enfermedad.png)
+> ![Diagrama de Estados enfermedad](/images/enfermedad.png)
 
-### El estado ante la detección de la enfermedad
+> blablabla
 
-![Diagrama de Estados enfermedad](/images/detección.png)
+### El estado de detección de la enfermedad ante el sistema de salud
 
+> ![Diagrama de Estados enfermedad](/images/detección.png)
 
-### Modelo Conceptual
+> blablabla
 
-
+Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" o verse limitadas por políticas externas al diagrama, como una medida de cuarentena, que disminuyen la tasa de contacto de una población.
 
 #### KPIs
 
