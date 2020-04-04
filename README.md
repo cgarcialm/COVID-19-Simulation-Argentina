@@ -1,5 +1,9 @@
 # Coronavirus: El mundo inhala, aguanta y ¿cuándo exhala?
 
+## Objetivo
+
+Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimada de ocurrencia.
+
 ## Conclusiones Generales
 
 Resumen de este estudio: 
@@ -18,7 +22,7 @@ De ahí la primera pregunta: *¿A qué nos referimos cuando hablamos de impacto?
 
 La segunda pregunta es hasta cuándo hay que tomar cada una de las medidas posibles y cómo es el efecto conjunto que tiene la aplicación de varias de ellas en simultáneo. *¿Qué pasa si exhalamos muy rápido y volvemos al punto de inicio?*
 
-## Modelado
+## Modelo Conceptual
 
 Para este análisis se desarrolló un **Modelo Basado en Agentes** para poder entender y mostrar cómo las conductas individuales, en este caso de las personas, en un entorno conectado y definido, el país y sus fronteras, afectan a la evolución del sistema completo, a su vez limitada o guiada por las distintas medidas que se pueden tomar a nivel macro, en este caso políticas desde el Estado.
 
@@ -32,12 +36,11 @@ Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
 
 ### El estado ante la enfermedad
 
-![Diagrama de Estados enfermedad] (/images/enfermedad.png)
+![Diagrama de Estados enfermedad](/images/enfermedad.png)
 
 ### El estado ante la detección de la enfermedad
 
-### Objetivo
-
+![Diagrama de Estados enfermedad](/images/detección.png)
 
 
 ### Modelo Conceptual
