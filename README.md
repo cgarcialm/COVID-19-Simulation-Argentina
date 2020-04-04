@@ -32,7 +32,7 @@ Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
 
 ### El estado ante la enfermedad
 
-![Diagrama de Estados enfermedad] (/images/enfermedad.png)
+![Diagrama de Estados enfermedad] (images/enfermedad.png)
 
 ### El estado ante la detección de la enfermedad
 
