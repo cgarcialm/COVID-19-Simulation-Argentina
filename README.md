@@ -10,7 +10,7 @@ Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimad
 
 ## Escenarios propuestos
 
-1. Medidas de aislamiento intensivas de corto plazo y extensión limitaciones en las fronteras  
+1. Medidas de aislamiento intensivas de corto plazo y extensión de medidas de limitación en las fronteras  
 2. Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
 3. Medidas de aislamiento moderadas de largo plazo 
 
@@ -41,19 +41,29 @@ En esta modelización existen dos tipos de agentes: las personas y las regiones.
 En este tipo de modelos, los agentes tienen distintos *estados* en los que pueden estar en cada unidad de tiempo. Para pasar de un estado a otro existen *transiciones* y una probabilidad asociada a cada una de ellas que se evalúa en cada unidad de tiempo.
 
 Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
-1. El estado ante la enfermedad
+1. El estado ante la infección
 2. El estado ante la detección de la misma en el sistema de salud
 
-### El estado ante la enfermedad
+### El estado ante la infección
 
 > ![Diagrama de Estados enfermedad](/images/enfermedad.png)
-
-> blablabla
+>
+> Un agente, es decir una persona en este caso, por defecto se encuentra sana. En el caso de contagio del virus, va a pasar a ser una 
+persona ***infectada*** e ingresar en el diagrama de estado ante la infección.
+> Con una determinada probabilidad se define si se trata 
+> - de una persona que será asintomática o 
+> - una persona que comenzará su periodo de incubación.
+>
+> El tipo de persona que es ***asintomática***, estará un tiempo infectada, hasta pasar a ***curado***, sin haberse dado cuenta de estar infectada, a menos que se le realice un test aleatorio.
+>
+> El tipo de persona que empieza el periodo de ***incubación*** transcurre un determinado tiempo hasta sentir el primer síntoma, momento en el que pasara al estado de ***síntomatico***. Cuando esto ocurra, se tratará de síntomas de gravedad ***leve*** y, con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. Independientemente del estado de gravedad, se evalúa en cada unidad de tiempo la probabilidad de pasar a estado ***curado***. 
+>
+> En todos los estados anteriores un agente se encuentra ***contagiando***. Solamente desde los estados moderado y grave podrá pasar un agente a estar en estado ***fallecido***.
 
 ### El estado de detección de la enfermedad ante el sistema de salud
 
 > ![Diagrama de Estados enfermedad](/images/detección.png)
-
+>
 > blablabla
 
 Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" pero sus valores "efectivos" pueden verse limitados por políticas externas al diagrama de estados, como una medida de cuarentena que disminuye la tasa de contacto de una población.
