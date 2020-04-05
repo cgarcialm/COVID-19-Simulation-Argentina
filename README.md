@@ -1,8 +1,8 @@
-# Coronavirus: El mundo inhala, aguanta y ¿cuándo exhala?
+# Coronavirus: Afectando la curva
 
 ## Objetivo
 
-Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimada de ocurrencia, frente a la aplicación por calendario de medidas no farmacéuticas.
+Ayudar a estimar el pico de demanda hospitalaria en Argentina frente a la aplicación por calendario de medidas no farmacéuticas: su fecha estimada de ocurrencia y la saturación que generará en el sistema de salud.
 
 ## Conclusiones
 
@@ -14,15 +14,15 @@ Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimad
 
 ## Escenarios propuestos y resumen de resultados
 
-### ESCENARIO OPTIMISTA: Medidas de aislamiento intensivas de corto plazo y extensión sólo de medidas de limitación en las fronteras  
+### Optimista: Medidas de aislamiento intensivas de corto plazo y extensión sólo de medidas de limitación en las fronteras  
 
 blablabla + gráficos resultado
 
-### ESCENARIO INTERMEDIO: Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
+### Intermedio: Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
 
 blablabla + gráficos resultado
 
-### ESCENARIO PESIMISTA: Medidas de aislamiento moderadas de largo plazo 
+### Pesimista: Medidas de aislamiento moderadas de largo plazo 
 
 blablabla + gráficos resultado
 
@@ -36,7 +36,7 @@ De ahí la primera pregunta: *¿A qué nos referimos cuando hablamos de impacto?
 
 En el modelo que se plantea en este análisis se busca visualizar y estimar el impacto en las salud de las personas en lo correspondiente al COVID y el grado de saturación del sistema hospitalario dado el dimensionamiento existente hoy. El resto de las preguntas deberán considerarse por fuera, en un análisis abarcativo como un costo que viene asociado a la estrategia utilizada en cada simulación.
 
-La segunda pregunta es hasta cuándo hay que tomar cada una de las medidas posibles. *¿Qué pasa si exhalamos muy rápido y volvemos al punto de inicio?* Para responder esto, hay que entender la evolución del sistema afectado por varias medidas aplicadas probablemente en simulatáneo.
+La segunda pregunta es hasta cuándo hay que tomar cada una de las medidas posibles. *¿Qué pasa si liberamos al sistema muy rápido y estamos de nuevo en el punto de partida?* Para responder esto, hay que entender la evolución del sistema afectado por varias medidas aplicadas probablemente en simulatáneo.
 
 #### Argentina
 
