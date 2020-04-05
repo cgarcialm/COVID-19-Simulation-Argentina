@@ -1,4 +1,4 @@
-# Coronavirus: Afectando la curva
+# Coronavirus: TÍTULO MARKETINERO
 
 ## Objetivo
 
