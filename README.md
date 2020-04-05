@@ -6,23 +6,25 @@ Ayudar a estimar el pico de demanda hospitalaria en Argentina y su fecha estimad
 
 ## Conclusiones
 
-1. Las decisiones que se están tomando para la contención del virus hasta ahora parecen ser las correctas.
+1. Las decisiones que se están tomando para la contención del virus hasta ahora parecen ser las correctas y debieran mantenerse por al menos X días para evitar fallecimientos por la saturación del sistema hospitalario.
 
 2. La saturación del sistema hospitalario difiere mucho entre Buenos Aires y el interior del país ya que la capacidad mismo en el interior es X veces más baja por habitante en el interior. La diferencia en densidad poblacional y en población en sí, genera menos cantidad de infectados pero genera que no se pueda brindar asistencia a todos los pacientes, si no se toman medidas más intensivas y a más largo plazo.
 
+3. 
+
 ## Escenarios propuestos y resumen de resultados
 
-1. Medidas de aislamiento intensivas de corto plazo y extensión de medidas de limitación en las fronteras  
+### ESCENARIO OPTIMISTA: Medidas de aislamiento intensivas de corto plazo y extensión sólo de medidas de limitación en las fronteras  
 
-blablabla
+blablabla + gráficos resultado
 
-2. Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
+### ESCENARIO INTERMEDIO: Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
 
-blablabla
+blablabla + gráficos resultado
 
-3. Medidas de aislamiento moderadas de largo plazo 
+### ESCENARIO PESIMISTA: Medidas de aislamiento moderadas de largo plazo 
 
-blablabla
+blablabla + gráficos resultado
 
 ## Desarrollo de la simulación
 
@@ -42,23 +44,43 @@ El primer caso confirmado de COVID19 en el país fue el 3 de Marzo en Buenos Air
 
 En ese momento, otros países en el mundo ya experimentaban evoluciones mucho más desarrolladas: China informaba
 
+### 2. KPIs
 
+Indicadores resultantes de la simulación de X días, calculados a nivel total y a nivel región.
 
-### 2. Modelo Conceptual
+- **Re**: Ratio de reproducción efectivo. Ratio de reproducción básico de la enfermedad afectado por medidas gubernamentales.
 
-Para este análisis se desarrolló un **Modelo Basado en Agentes** para poder entender y mostrar cómo las conductas individuales (en este caso de las regiones y las personas) en un entorno conectado y definido (el país y sus fronteras) afectan a la evolución del sistema completo, a su vez limitada o guiada por las distintas medidas que se pueden tomar a nivel macro (políticas desde el Estado).
+- **Infectados**: Cantidad de infectados.
 
-En esta modelización existen dos tipos de agentes: las personas y las regiones. Las regiones, en principio, funcionan a modo informativo para obtener estadísticas de la simulación, pero las personas tienen una estructura de comportamiento específica y definida. 
+- **Fallecimientos**: Cantidad de fallecimientos.
+
+- **Saturación de hospitales**: Proporción utilizada de las instalaciones y equipamiento de salud disponible.
+
+### 3. Modelo Conceptual
+
+Para este análisis se desarrolló un [**Modelo Basado en Agentes en el software de simulación Anylogic**](https://www.anylogic.com/use-of-simulation/agent-based-modeling/) para poder entender y mostrar cómo las conductas individuales (en este caso de las regiones y las personas) en un entorno conectado y definido (el país y sus fronteras) afectan a la evolución del sistema completo, a su vez limitada o guiada por las distintas medidas que se pueden tomar a nivel macro (políticas desde el Estado).
 
 En este tipo de modelos, los agentes tienen distintos *estados* en los que pueden estar en cada unidad de tiempo. Para pasar de un estado a otro existen *transiciones* y una probabilidad asociada a cada una de ellas que se evalúa en cada unidad de tiempo.
 
+En esta modelización existen dos tipos de agentes:  
+- ***Las Regiones*** interactúan entre sí a través de los movimientos migratorios internos y con el exterior del sistema a através de los movimientos migratorios externos. Además, contienen a los agentes Personas que son afectados por características de la región como la densidad y las políticas aplicadas en la misma que influyen en la tasa de contacto entre ellos.
+- ***Las Personas*** transicionan entre estados que describen su situación ante la enfermedad y la interacción con las demás personas de la región a la que pertenecen. 
+
+#### Las Regiones
+
+#### Las Personas 
+
 Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
+
 1. El estado ante la infección
-2. El estado ante la detección de la misma en el sistema de salud
 
-#### El estado ante la infección
+2. El estado ante sistema de salud
 
-> ![Diagrama de Estados de infección](/images/enfermedad.png)
+Estos flujos de estados interactúan entre sí porque de por sí, no se va a internar a una persona sana, pero van en paralelo ya que las limitaciones del sistema de salud, como su capacidad o la disponibilidad de cierto tipo de camas puede hacer que los pacientes no reciban el nivel de asistencia necesaria.
+
+##### El estado ante la infección
+
+> ![Diagrama de Estados de Infección](/images/enfermedad.png)
 >
 > Un agente, es decir una persona en este caso, por defecto se encuentra sana. En el caso de contagio del virus, va a pasar a ser una 
 persona ***infectada*** e ingresar en el diagrama de estado ante la infección.
@@ -74,19 +96,15 @@ persona ***infectada*** e ingresar en el diagrama de estado ante la infección.
 > * Desde todos los estados del diagrama de infección se evalúa un tiempo para pasar al estado ***curado*** que sigue una determinada distribución relacionada a la enfermedad.
 > * En caso de no haberse cumplido el tiempo de curación, solamente desde los estados moderado y grave podrá pasar un agente a estar en estado ***fallecido*** con una probabilidad asociada al rango etario.
 
-#### El estado de detección de la enfermedad ante el sistema de salud
+##### El estado de detección de la enfermedad ante el sistema de salud
 
-> ![Diagrama de Estados enfermedad](/images/detección.png)
+> ![Diagrama de Estados ante el Sistema de Salud](/images/detección.png)
 >
-> blablabla
+> 
 
-Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" pero sus valores "efectivos" pueden verse limitados por políticas externas al diagrama de estados, como una medida de cuarentena que disminuye la tasa de contacto de una población.
+### Transiciones
 
-### 3. KPIs
-
-- Infectados
-- Fallecimientos
-- Saturación de hospitales
+Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" pero sus valores "efectivos" pueden verse limitados por políticas externas al diagrama de estados, como por ejemplo una medida de cuarentena que disminuye la tasa de contacto de una población. Su valores efectivos variarán por Región ya que se puede aplicar distintas políticas para cada una.
 
 ### 4. Variables de Decisión
 
