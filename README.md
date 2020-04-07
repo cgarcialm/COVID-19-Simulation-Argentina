@@ -16,15 +16,15 @@ Ayudar a estimar el pico de demanda hospitalaria en Argentina frente a la aplica
 
 ### Optimista: Medidas de aislamiento intensivas de corto plazo y extensión sólo de medidas de limitación en las fronteras  
 
-blablabla + gráficos resultado
+blablabla + gráficos resultado Power BI
 
 ### Intermedio: Medidas de aislamiento intensivas de mediano plazo y vuelta a la normalidad gradualmente
 
-blablabla + gráficos resultado
+blablabla + gráficos resultado Power BI
 
 ### Pesimista: Medidas de aislamiento moderadas de largo plazo 
 
-blablabla + gráficos resultado
+blablabla + gráficos resultado Power BI
 
 ## Desarrollo de la simulación
 
@@ -44,6 +44,10 @@ El primer caso confirmado de COVID19 en el país fue el 3 de Marzo en Buenos Air
 
 En ese momento, otros países en el mundo ya experimentaban evoluciones mucho más desarrolladas: China informaba
 
+#### Series de tiempo de medidas en Europa y USA
+
+Agregar series de tiempo
+
 ### 2. KPIs
 
 Indicadores resultantes de la simulación de X días, calculados a nivel total y a nivel región.
@@ -56,7 +60,9 @@ Indicadores resultantes de la simulación de X días, calculados a nivel total y
 
 - **Saturación de hospitales**: Proporción utilizada de las instalaciones y equipamiento de salud disponible.
 
-### 3. Modelo Conceptual
+### 3. Montecarlo
+
+### 4. Modelo Conceptual
 
 Para este análisis se desarrolló un [**Modelo Basado en Agentes en el software de simulación Anylogic**](https://www.anylogic.com/use-of-simulation/agent-based-modeling/) para poder entender y mostrar cómo las conductas individuales (en este caso de las regiones y las personas) en un entorno conectado y definido (el país y sus fronteras) afectan a la evolución del sistema completo, a su vez limitada o guiada por las distintas medidas que se pueden tomar a nivel macro (políticas desde el Estado).
 
@@ -106,9 +112,9 @@ persona ***infectada*** e ingresar en el diagrama de estado ante la infección.
 
 Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" pero sus valores "efectivos" pueden verse limitados por políticas externas al diagrama de estados, como por ejemplo una medida de cuarentena que disminuye la tasa de contacto de una población. Su valores efectivos variarán por Región ya que se puede aplicar distintas políticas para cada una.
 
-### 4. Variables de Decisión
+### 5. Variables de Decisión
 
-### 5. Lógicas de la simulación
+### 6. Lógicas de la simulación
 
 ## Validación
 
