@@ -45,6 +45,8 @@ El primer caso confirmado de COVID19 en el país fue el 3 de Marzo en Buenos Air
 
 En ese momento, otros países en el mundo ya experimentaban evoluciones mucho más desarrolladas: China informaba
 
+#### Series de tiempo de medidas en Europa y USA
+
 ![Serie de tiempo Italia](/images/timeseries_Italy.png)
 
 ![Serie de tiempo Francia](/images/timeseries_France.png)
@@ -52,10 +54,6 @@ En ese momento, otros países en el mundo ya experimentaban evoluciones mucho m�
 ![Serie de tiempo Spain](/images/timeseries_Spain.png)
 
 ![Serie de tiempo China](/images/timeseries_China.png)
-
-#### Series de tiempo de medidas en Europa y USA
-
-Agregar series de tiempo
 
 ### 2. KPIs
 
