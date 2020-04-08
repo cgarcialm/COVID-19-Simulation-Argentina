@@ -6,9 +6,9 @@ Ayudar a estimar el pico de demanda hospitalaria en Argentina frente a la aplica
 
 ## Conclusiones
 
-1. Las decisiones que se están tomando para la contención del virus hasta ahora parecen ser las correctas y debieran mantenerse por al menos X días para evitar fallecimientos por la saturación del sistema hospitalario.
+1. Las **medidas** que se están tomando para la contención del virus hasta ahora parecen ser las **correctas y debieran mantenerse por al menos X días** para evitar fallecimientos por la saturación del sistema hospitalario.
 
-2. La saturación del sistema hospitalario difiere mucho entre Buenos Aires y el interior del país ya que la capacidad mismo en el interior es X veces más baja por habitante en el interior. La diferencia en densidad poblacional y en población en sí, genera menos cantidad de infectados pero genera que no se pueda brindar asistencia a todos los pacientes, si no se toman medidas más intensivas y a más largo plazo.
+2. **La saturación del sistema hospitalario difiere mucho entre Buenos Aires y el interior del país ya que la capacidad mismo en el interior es X veces más baja por habitante en el interior.** La diferencia en densidad poblacional y en población en sí, genera menos cantidad de infectados pero genera que no se pueda brindar asistencia a todos los pacientes, si no se toman medidas más intensivas y a más largo plazo.
 
 3. 
 
@@ -43,6 +43,14 @@ La segunda pregunta es hasta cuándo hay que tomar cada una de las medidas posib
 El primer caso confirmado de COVID19 en el país fue el 3 de Marzo en Buenos Aires. El paciente, de 43 años, había llegado al país el 1 de Marzo desde Italia.
 
 En ese momento, otros países en el mundo ya experimentaban evoluciones mucho más desarrolladas: China informaba
+
+![Serie de tiempo Italia](/images/timeseries_Italy.png)
+
+![Serie de tiempo Francia](/images/timeseries_France.png)
+
+![Serie de tiempo Spain](/images/timeseries_Spain.png)
+
+![Serie de tiempo China](/images/timeseries_China.png)
 
 #### Series de tiempo de medidas en Europa y USA
 
