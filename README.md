@@ -1,8 +1,5 @@
 # Coronavirus: Análisis de medidas no farmacéuticas
 
-# =======================================
-# Resumen de resultados
-
 ## Objetivo
 
 Ayudar a estimar el pico de demanda hospitalaria en Argentina frente a la aplicación por calendario de medidas no farmacéuticas: su fecha estimada de ocurrencia y la saturación que generará en el sistema de salud.
@@ -30,7 +27,7 @@ blablabla + gráficos resultado Power BI
 blablabla + gráficos resultado Power BI
 
 # =======================================
-# Desarrollo de la simulación
+## Desarrollo de la simulación
 
 ### 1. Contexto
 
