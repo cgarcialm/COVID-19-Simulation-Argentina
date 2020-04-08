@@ -1,4 +1,7 @@
-# Coronavirus: TÍTULO MARKETINERO
+# Coronavirus: Análisis de medidas no farmacéuticas
+
+# =======================================
+# Resumen de resultados
 
 ## Objetivo
 
@@ -26,7 +29,8 @@ blablabla + gráficos resultado Power BI
 
 blablabla + gráficos resultado Power BI
 
-## Desarrollo de la simulación
+# =======================================
+# Desarrollo de la simulación
 
 ### 1. Contexto
 
