@@ -55,6 +55,10 @@ En ese momento, otros países en el mundo ya experimentaban evoluciones mucho m�
 
 ![Serie de tiempo China](/images/timeseries_China.png)
 
+### Efecto de las medidas en Europa y USA
+
+![Government Measures Effect](/images/gov_measures_effect.png)
+
 ### 2. KPIs
 
 Indicadores resultantes de la simulación de X días, calculados a nivel total y a nivel región.
