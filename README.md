@@ -79,13 +79,13 @@ Para este análisis se desarrolló un [**Modelo Basado en Agentes en el software
 
 En este tipo de modelos, los agentes tienen distintos *estados* en los que pueden estar en cada unidad de tiempo. Para pasar de un estado a otro existen *transiciones* y una probabilidad asociada a cada una de ellas que se evalúa en cada unidad de tiempo.
 
-En esta modelización existen dos tipos de agentes:  
-- ***Las Regiones*** interactúan entre sí a través de los movimientos migratorios internos y con el exterior del sistema a através de los movimientos migratorios externos. Además, contienen a los agentes Personas que son afectados por características de la región como la densidad y las políticas aplicadas en la misma que influyen en la tasa de contacto entre ellos.
-- ***Las Personas*** transicionan entre estados que describen su situación ante la enfermedad y la interacción con las demás personas de la región a la que pertenecen. 
+En esta modelo existen dos tipos de agentes:  
+- ***Las Regiones*** interactúan entre sí a través de los movimientos migratorios internos y con el exterior del sistema a través de los movimientos migratorios externos. Además, contienen a los agentes Personas que son afectados por características de la región como la densidad y las políticas aplicadas en la misma que influyen en la tasa de contacto entre ellos.
+- ***Los Infectados*** transicionan entre estados que describen su situación ante la enfermedad y el grado de contacto con las demás personas de la región a la que pertenecen. 
 
 #### Las Regiones
 
-#### Las Personas 
+#### Los Infectados 
 
 *Contagio*
 
@@ -99,7 +99,7 @@ A partir de su región de origen al infectado nuevo se le asigna:
 
 *Evolución*
 
-Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
+Los infectados tienen dos tipos de diagramas de estados que queremos diferenciar:
 
 1. El estado ante la infección
 
@@ -111,21 +111,21 @@ Estos flujos de estados interactúan entre sí porque de por sí, no se va a int
 
 > ![Diagrama de Estados de Infección](/images/enfermedad.png)
 >
-> Una persona, por defecto se encuentra sana. En el caso de contagio del virus, momento en que se genera el agente en el modelo, va a pasar a ser una persona ***infectada*** e ingresar en el diagrama de estado ante la infección, en el estado ***asintomático***. 
+> En el caso de contagio del virus, se genera un agente ***infectado*** que va a ingresar en el diagrama de estado ante la infección, en el estado ***asintomático***. 
 >
-> La persona permanecerá asintomática durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
-> - la persona se recupera, es decir que es una persona que no tuvo síntomas en toda su infección, o 
+> El Infectado permanecerá asintomática durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
+> - el Infectado se recupera, es decir que es un infectado que no tuvo síntomas en toda su infección, o 
 > - si experimenta el primer síntoma de la enfermedad e ingresa en el estado ***sintomático***.
 >
 > Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
 >
-> **Contagio:** En todos los estados pertenecientes al diagrama de infección, un agente se encuentra contagiando con el ratio de reproducción asociado a la enfermedad. 
+> **Contagio:** En todos los estados pertenecientes al diagrama de infección, un agente Infectado se encuentra contagiando con el ratio de reproducción asociado a la enfermedad. 
 >
-> **Recuperación:** Si la persona es asintomática, luego de su periodo de incubación, la misma se recupera. Si la persona es sintomática, independientementemente del estado de gravedad de la enfermedad, en cada unidad de tiempo se evalúa una probabilidad para pasar al estado ***recuperado*** que sigue una determinada distribución relacionada a la enfermedad.
+> **Recuperación:** Si el Infectado es asintomático, luego de su periodo de incubación, el mismo se recupera. Si el Infectado es sintomático, independientementemente del estado de gravedad de la enfermedad, en cada unidad de tiempo se evalúa una probabilidad para pasar al estado ***recuperado*** que sigue una determinada distribución relacionada a la enfermedad.
 >
-> **Fallecimiento:** En caso de no haberse cumplido el tiempo de recuración, solamente desde los estados moderado y grave podrá pasar un agente a estar en estado ***fallecido***. 
-> La enfermedad tiene dos tablas de **tasa de letalidad**, una para casos moderados y otra para casos graves, que varían en función de la edad del infectado (que se determinó según el perfil etario de la región)
-> Entonces a cada persona infectada le corresponde una tasa de letalidad a traves de esos dos valores: edad y severidad. A esta tasa se la afecta además, por el **factor de agravamiento** dependiente del nivel de atención requerido y obtenido.
+> **Fallecimiento:** En caso de no haberse cumplido el tiempo de recuperación, solamente desde los estados moderado y grave podrá pasar un Infectado a estar en estado ***fallecido***. 
+> La enfermedad tiene dos tablas de **tasa de letalidad**, una para casos moderados y otra para casos graves, que varían en función de la edad del Infectado (que se determinó según el perfil etario de la Región)
+> Entonces a Infectado le corresponde una tasa de letalidad a través de esos dos valores: edad y severidad. A esta tasa se la afecta además, por el **factor de agravamiento** dependiente del nivel de atención requerido y el obtenido.
 
 ##### El estado de detección de la enfermedad ante el sistema de salud
 
@@ -133,13 +133,13 @@ Estos flujos de estados interactúan entre sí porque de por sí, no se va a int
 >
 > Este flujo de estados es independiente al de la infección y funciona en paralelo al mismo para reflejar el nivel de aislamiento y de atención recibida. Depende más que nada de la saturación del sistema hospitalario y es afectado pero no limitado por la disponibilidad de tests de diagnóstico. 
 >
-> Al infectarse una persona, ingresa por defecto en el estado ***circulando***. La misma pasará a estar ***aislada***:
+> Al generarse un agente Infectado, ingresa por defecto en el estado ***circulando***. El mismo pasará a estar ***aislada***:
 > - si se detecta su infección por un test de diagnóstico o,
 > - si sus síntomas se manifiestan por lo que recurre al sistema de salud.
 >
-> Dentro del estado aislado, por defecto la persona se encontrará ***no hospitalizada***. En este estado la persona reducirá su contacto con el resto de la población ya que se le indicó el aisamiento. Mientras la persona no presente síntomas o sus síntomas sean de gravedad leve, no requerirá mayor nivel de asistencia.
+> Dentro del estado aislado, por defecto el Infectado se encontrará ***no hospitalizado***. En este estado, el Infectado reducirá su contacto con el resto de la población ya que se le indicó el aisamiento. Mientras no presente síntomas o sus síntomas sean de gravedad leve, no requerirá mayor nivel de asistencia.
 > 
-> En el caso en que la gravedad de la enfermedad sea moderada o crítica, y haya disponibilidad de camas, podrá ser ***hospitalizada***. Para definir el grado de atención requerido en la hospitalización, se observa el nivel de gravedad de la enfermedad.
+> En el caso en que la gravedad de la enfermedad sea moderada o crítica, y haya disponibilidad de camas, podrá ser ***hospitalizado***. Para definir el grado de atención requerido en la hospitalización, se observa el nivel de gravedad de la enfermedad.
 > - Si es moderado, y hay camas de aislamiento disponibles, su estado será de ***cama aislamiento***. Si no las hay, continuará en aislamiento pero sin estar hospitalizado.
 > - Si es grave, se evalúa si hay camas de terapia intensiva y se evalúa también si necesita y si hay repiradores disponibles para pasar a ***terapia intensiva*** y, ***sin respirador*** o ***con respirador***. En el caso en que necesite respirador pero no haya, se le asignará la cama de TI sin respirador. En el caso en que no haya camas de TI, se le asignará una cama de aislamiento. Si tampoco hubiera camas de aislamiento, continuará en aislamiento pero sin estar hospitalizado.
 
