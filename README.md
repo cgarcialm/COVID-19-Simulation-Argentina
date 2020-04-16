@@ -87,6 +87,18 @@ En esta modelización existen dos tipos de agentes:
 
 #### Las Personas 
 
+*Contagio*
+
+Cuando se produce un contagio, se genera un agente infectado nuevo cuya región de origen es la región actual del infectado original.
+
+*Determinación Características* 
+
+A partir de su región de origen al infectado nuevo se le asigna:
+- Edad según el perfil etario de la Región
+- Región Destino de viajes
+
+*Evolución*
+
 Las personas tienen dos tipos de diagramas de estados que queremos diferenciar:
 
 1. El estado ante la infección
@@ -109,7 +121,9 @@ persona ***infectada*** e ingresar en el diagrama de estado ante la infección, 
 > Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
 >
 > **Contagio:** En todos los estados pertenecientes al diagrama de infección, un agente se encuentra contagiando con el ratio asoaciado a la enfermedad. 
+>
 > **Recuperación:** Si la persona es asintomática, luego de su periodo de incubación, la misma se recupera. Si la persona es sintomática, independientementemente del estado de gravedad de la enfermedad, en cada unidad de tiempo se evalúa una probabilidad para pasar al estado ***recuperado*** que sigue una determinada distribución relacionada a la enfermedad.
+>
 > **Fallecimiento:** En caso de no haberse cumplido el tiempo de curación, solamente desde los estados moderado y grave podrá pasar un agente a estar en estado ***fallecido***. 
 > La enfermedad tiene dos tablas de **tasa de letalidad**, una para casos moderados y otra para casos graves, que varían en función de la edad del infectado (que se determinó según el perfil etario de la región)
 > Entonces a cada persona infectada le corresponde una tasa de letalidad a traves de esos dos valores: edad y severidad. A esta tasa se la afecta además, por el **factor de agravamiento** dependiente del nivel de atención requerido y obtenido.
