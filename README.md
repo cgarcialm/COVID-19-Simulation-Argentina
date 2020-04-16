@@ -105,18 +105,30 @@ persona ***infectada*** e ingresar en el diagrama de estado ante la infección, 
 > La persona permanecerá asintomática durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
 > - la persona se recupera, es decir es una persona que no tuvo síntomas en toda su infección, o 
 > - si experimenta el primer síntoma de la enfermedad e ingresa en el estado ***sintomático***.
-
+>
 > Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
 >
-> * En todos los estados pertenecientes al diagrama de infección, un agente se encuentra contagiando con el ratio asoaciado a la enfermedad. 
-> * Desde todos los estados del diagrama de infección se evalúa un tiempo para pasar al estado ***curado*** que sigue una determinada distribución relacionada a la enfermedad.
-> * En caso de no haberse cumplido el tiempo de curación, solamente desde los estados moderado y grave podrá pasar un agente a estar en estado ***fallecido*** con una probabilidad asociada al rango etario.
+> **Contagio:** En todos los estados pertenecientes al diagrama de infección, un agente se encuentra contagiando con el ratio asoaciado a la enfermedad. 
+> **Recuperación:** Si la persona es asintomática, luego de su periodo de incubación, la misma se recupera. Si la persona es sintomática, independientementemente del estado de gravedad de la enfermedad, en cada unidad de tiempo se evalúa una probabilidad para pasar al estado ***recuperado*** que sigue una determinada distribución relacionada a la enfermedad.
+> **Fallecimiento:** En caso de no haberse cumplido el tiempo de curación, solamente desde los estados moderado y grave podrá pasar un agente a estar en estado ***fallecido***. 
+> La enfermedad tiene dos tablas de **tasa de letalidad**, una para casos moderados y otra para casos graves, que varían en función de la edad del infectado (que se determinó según el perfil etario de la región)
+> Entonces a cada persona infectada le corresponde una tasa de letalidad a traves de esos dos valores: edad y severidad. A esta tasa se la afecta además, por el **factor de agravamiento** dependiente del nivel de atención requerido y obtenido.
 
 ##### El estado de detección de la enfermedad ante el sistema de salud
 
 > ![Diagrama de Estados ante el Sistema de Salud](/images/detección.png)
 >
+> Este flujo de estados es independiente al de la infección y funciona en paralelo al mismo para reflejar el nivel de aislamiento y de atención recibida. Depende más que nada de la disponibilidad de camas, y de la saturación del sistema hospitalario y es afectado pero no limitado por la disponibilidad de tests de diagnóstico. 
+>
+> Al infectarse una persona ingresa por defecto en el estado ***circulando***. La misma pasará a estar ***aislada***:
+> - si se detecta su infección por un test de diagnóstico o,
+> - si sus síntomas requieren algún nivel de atención por lo que recurre al sistema de salud.
+>
+> Dentro del estado aislado, por defecto la persona se encontrará ***no hospitalizada***. En este estado la persona reducirá su contacto con el resto de la población ya que se le indicó el aisamiento. Mientras la persona no presente síntomas o sus síntomas sean de gravedad leve, no requerirá mayor nivel de asistencia.
 > 
+> En el caso en que la gravedad de la enfermedad sea moderada o grave, y haya disponibilidad de camas, podrá ser ***hospitalizada***. Para definir el grado de atención requerido en la hospitalización, se observa el nivel de gravedad de la enfermedad.
+> - Si es moderado, y hay camas de aislamiento disponibles, su estado será de ***cama aislamiento***. Si no las hay, continuará en aislamiento pero sin estar hospitalizado.
+> - Si es grave, se evalúa si hay camas de terapia intensiva y si necesita y hay repiradores disponibles para pasar a ***terapia intensiva*** y, ***sin respirador*** o ***con respirador***. En el caso en que necesite respirador pero no haya, se le asignará la cama de TI sin respirador. En el caso en que no haya camas de TI, se le asignará una cama de aislamiento. Si tampoco hubiera cama de aislamiento, continuará en aislamiento pero sin estar hospitalizado.
 
 ### Transiciones
 
