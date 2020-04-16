@@ -100,14 +100,13 @@ Estos flujos de estados interactúan entre sí porque de por sí, no se va a int
 > ![Diagrama de Estados de Infección](/images/enfermedad.png)
 >
 > Un agente, es decir una persona en este caso, por defecto se encuentra sana. En el caso de contagio del virus, va a pasar a ser una 
-persona ***infectada*** e ingresar en el diagrama de estado ante la infección.
-> Con una determinada probabilidad se define si se trata 
-> - de una persona que será asintomática o 
-> - una persona que comenzará su periodo de incubación.
+persona ***infectada*** e ingresar en el diagrama de estado ante la infección, en el estado ***asintomático***. 
 >
-> El tipo de persona que es ***asintomática***, estará un tiempo infectada, sin haberse dado cuenta de estar infectada, a menos que se le realice un test aleatorio. 
->
-> El tipo de persona que empieza el periodo de ***incubación*** transcurre un tiempo, que sigue una determinada distribución asociada a la enfermedad, hasta sentir el primer síntoma, momento en el que pasara al estado de ***síntomatico***. Cuando esto ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
+> La persona permanecerá asintomática durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
+- la persona se recupera, es decir es una persona que no tuvo síntomas en toda su infección, o 
+- si experimenta el primer síntoma de la enfermedad e ingresa en el estado ***sintomático***.
+
+> Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
 >
 > * En todos los estados pertenecientes al diagrama de infección, un agente se encuentra contagiando con el ratio asoaciado a la enfermedad. 
 > * Desde todos los estados del diagrama de infección se evalúa un tiempo para pasar al estado ***curado*** que sigue una determinada distribución relacionada a la enfermedad.
