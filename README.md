@@ -147,7 +147,15 @@ Estos flujos de estados interactúan entre sí porque de por sí, no se va a int
 
 ### Transiciones
 
-Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades son características propias de la enfermedad y de la población en la que se está distribuyendo, que tienen valores "libres" pero sus valores "efectivos" pueden verse limitados por políticas externas al diagrama de estados, como por ejemplo una medida de cuarentena que disminuye la tasa de contacto de una población. Su valores efectivos variarán por Región ya que se puede aplicar distintas políticas para cada una.
+Las transiciones entre los estados están definidas por probabilidades. Dichas probabilidades provienen de características propias de la enfermedad y del comportamiento de la población en la que se está distribuyendo. 
+
+El ratio de reproducción del virus tiene un valor *libre*, pero su valor *efectivo* puede verse limitado por políticas externas al diagrama de estados, como por ejemplo una medida de cuarentena que disminuye la tasa de contacto de una población. Su valor efectivo variará por Región ya que se pueden aplicar distintas políticas para cada una.
+
+## Palancas
+
+descripción de palancas
+
+gráfico de efecto en R0
 
 ### 5. Variables de Decisión
 
