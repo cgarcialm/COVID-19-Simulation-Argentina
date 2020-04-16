@@ -103,8 +103,8 @@ Estos flujos de estados interactúan entre sí porque de por sí, no se va a int
 persona ***infectada*** e ingresar en el diagrama de estado ante la infección, en el estado ***asintomático***. 
 >
 > La persona permanecerá asintomática durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
-- la persona se recupera, es decir es una persona que no tuvo síntomas en toda su infección, o 
-- si experimenta el primer síntoma de la enfermedad e ingresa en el estado ***sintomático***.
+> - la persona se recupera, es decir es una persona que no tuvo síntomas en toda su infección, o 
+> - si experimenta el primer síntoma de la enfermedad e ingresa en el estado ***sintomático***.
 
 > Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
 >
