@@ -113,18 +113,20 @@ Estos flujos de estados interactúan entre sí porque de por sí, no se va a int
 >
 > En el caso de contagio del virus, se genera un agente ***infectado*** que va a ingresar en el diagrama de estado ante la infección, en el estado ***asintomático***. 
 >
-> El Infectado permanecerá asintomática durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
+> El Infectado permanecerá asintomático durante un tiempo que sigue una distribución determinada por la enfermedad que es el de su periodo de incubación. Al terminar el tiempo de incubación, se determina con cierta probabilidad si 
 > - el Infectado se recupera, es decir que es un infectado que no tuvo síntomas en toda su infección, o 
 > - si experimenta el primer síntoma de la enfermedad e ingresa en el estado ***sintomático***.
 >
-> Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***grave***. 
+> Cuando esto último ocurra, se tratará de síntomas de gravedad ***leve***. Con determinada probabilidad asociada a su rango etario, podrá empeorar en gravedad de ahí en adelante. Los siguientes estados asociados a la gravedad son ***moderado*** y ***crítico***. 
 >
 > **Contagio:** En todos los estados pertenecientes al diagrama de infección, un agente Infectado se encuentra contagiando con el ratio de reproducción asociado a la enfermedad. 
 >
 > **Recuperación:** Si el Infectado es asintomático, luego de su periodo de incubación, el mismo se recupera. Si el Infectado es sintomático, independientementemente del estado de gravedad de la enfermedad, en cada unidad de tiempo se evalúa una probabilidad para pasar al estado ***recuperado*** que sigue una determinada distribución relacionada a la enfermedad.
 >
 > **Fallecimiento:** En caso de no haberse cumplido el tiempo de recuperación, solamente desde los estados moderado y grave podrá pasar un Infectado a estar en estado ***fallecido***. 
-> La enfermedad tiene dos tablas de **tasa de letalidad**, una para casos moderados y otra para casos graves, que varían en función de la edad del Infectado (que se determinó según el perfil etario de la Región)
+>
+> La enfermedad tiene dos tablas de **tasa de letalidad**, una para casos moderados y otra para casos graves, que varían en función de la edad del Infectado (que se determinó según el perfil etario de la Región).
+>
 > Entonces a Infectado le corresponde una tasa de letalidad a través de esos dos valores: edad y severidad. A esta tasa se la afecta además, por el **factor de agravamiento** dependiente del nivel de atención requerido y el obtenido.
 
 ##### El estado de detección de la enfermedad ante el sistema de salud
